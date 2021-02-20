@@ -21,7 +21,7 @@ function Home() {
     return (
         <div id="painel" className="d-flex justify-content-center">
             <div id="painelHome">
-                <h1 id="tituloHome">ENCURTADOR DE URL</h1>
+                <h1 id="tituloHome">ENCURTADOR DE URL :)</h1>
                 <Form>
                     <Form.Group>
                         <Form.Label htmlFor="inlineFormInputGroup" />
