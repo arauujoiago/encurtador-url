@@ -1,0 +1,22 @@
+#painelListaUrls {
+  height: 100%;
+  width: 80%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #fff;
+  flex-direction: column;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+#tituloListaUrls {
+  text-align: center;
+}
+
+#btnVoltar {
+  position: fixed;
+  top: 1.5em;
+  left: 0.5em;
+  z-index: 9999;
+  cursor: pointer;
+}
