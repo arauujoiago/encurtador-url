@@ -9,12 +9,14 @@ import Axios from 'axios'
 import './home.css'
 
 function Home() {
+    var idUser = localStorage.getItem('idUser');
+
     const [urlCurta, setUrl] = useState('');
 
     useEffect(() => {
         var urlOriginal = document.getElementById("urlOriginal").value
         if (urlOriginal != '') {
-            Axios.post('http://localhost:5000/insertUrl', { urlOriginal, urlCurta })
+            Axios.post('http://localhost:5000/insertUrl', { urlOriginal, urlCurta, idUser})
         }
     })
 
@@ -26,7 +28,6 @@ function Home() {
         if (re.test(urlOriginal)) {
             ShortUrl.short(urlOriginal, function (err, url) {
                 setUrl(url);
-                // Axios.post('http://localhost:5000/insertUrl', { urlOriginal, urlCurta })
             });
 
         } else {
