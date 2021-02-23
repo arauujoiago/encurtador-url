@@ -1,7 +1,5 @@
 # Encurtador de URLs
 
-[![NPM Version][npm-image]][npm-url]
-
 ## Requisitos
 
 - Node v14.15.5
@@ -28,5 +26,5 @@
 
 O sistema tem um usuário criado durante o processo de inicialização do banco de dados:
 
-Login: admin
-Senha: delta123
+- Login: admin
+- Senha: delta123
