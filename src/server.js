@@ -18,6 +18,9 @@ app.get('/auth', (req, res) => {
         if (usuario) {
             res.send({ token: true, idUser: usuario.id, login: usuario.login })
         }
+        else {
+            res.send({msg: "Login e/ou senha errados."})
+        }
     })
 
 })

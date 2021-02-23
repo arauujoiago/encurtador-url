@@ -10,15 +10,21 @@ import './home.css'
 
 function Home() {
     var idUser = localStorage.getItem('idUser');
-
     const [urlCurta, setUrl] = useState('');
 
     useEffect(() => {
         var urlOriginal = document.getElementById("urlOriginal").value
-        if (urlOriginal != '') {
-            Axios.post('http://localhost:5000/insertUrl', { urlOriginal, urlCurta, idUser})
+        if (urlCurta != 'URL Inválida.' && urlCurta != '') {
+            Axios.post('http://localhost:5000/insertUrl', { urlOriginal, urlCurta, idUser })
         }
     })
+
+    function removeToken() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('idUser');
+        localStorage.removeItem('login');
+        window.location.reload();
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -38,6 +44,7 @@ function Home() {
     return (
         <div id="painel" className="d-flex justify-content-center">
             <div id="painelHome">
+                <Button id="btnLogout" onClick={removeToken} variant="danger">Logout</Button>
                 <h1 id="tituloHome">ENCURTADOR DE URL</h1>
                 <Form>
                     <Form.Group>
@@ -50,7 +57,7 @@ function Home() {
                         </InputGroup>
                     </Form.Group>
                     <div id="urlEncurtada"><p>{urlCurta}</p></div>
-                    <Button variant="warning" type="submit" size="lg" onClick={handleSubmit} block>Encurtar</Button>
+                    <Button variant="dark" type="submit" size="lg" onClick={handleSubmit} block>Encurtar</Button>
                 </Form>
                 <Link id="linkListar" to="/listaUrls"><Button id="btnListar" variant="info" size="lg" block>Listar URLs</Button></Link>
             </div>

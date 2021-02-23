@@ -7,28 +7,33 @@ import Axios from 'axios'
 
 function ListaUrls() {
     const [urls, setUrl] = useState([]);
+    var count = 1
+
     var idUser = localStorage.getItem('idUser');
-    var nome = localStorage.getItem('login')
-    
+
     useEffect(() => {
-        Axios.get('http://localhost:5000/listaUrl', { params: {idUser} }).then(response => {
+        Axios.get('http://localhost:5000/listaUrl', { params: { idUser } }).then(response => {
             setUrl(response.data);
         })
     }, []);
 
-    const capitalize = str => {
-        if (typeof str !== 'string') {
-            return '';
-        }
-        return str.charAt(0).toUpperCase() + str.substr(1);
+    function formatDate(date) {
+        date = new Date(date)
+        const time = date.toString().substr(16, 9)
+        const day = date.getDate().toString().padStart(2, '0')
+        const month = (date.getMonth() + 1).toString().padStart(2, '0')
+        const year = date.getFullYear()
+        const formatted = `${time} - ${day}/${month}/${year}`
+
+        return formatted
     }
 
     return (
         <div id="painel" className="d-flex justify-content-center">
             <div id="painelListaUrls">
                 <Link id="linkListar" to="/home"><Button id="btnVoltar" variant="warning">Voltar</Button></Link>
-                <h1 id="tituloListaUrls">Bem vindo, {capitalize(nome)}! <br />Lista de URLs</h1>
-                <Table responsive striped bordered hover size="sm">
+                <h1 id="tituloListaUrls">LISTA DE URLS</h1>
+                <Table responsive striped bordered hover size="sm" id="tabelaUrls">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -39,10 +44,10 @@ function ListaUrls() {
                     </thead>
                     <tbody>
                         {urls.map(urls => (<tr>
-                            <td>{urls.id}</td>
+                            <td>{count++}</td>
                             <td>{urls.urlOriginal}</td>
                             <td>{urls.urlCurta}</td>
-                            <td>{urls.createdAt}</td>
+                            <td>{formatDate(urls.createdAt)}</td>
                         </tr>))}
                     </tbody>
                 </Table>

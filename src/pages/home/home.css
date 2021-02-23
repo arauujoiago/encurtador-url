@@ -1,12 +1,14 @@
 #painelHome {
   height: 100%;
-  width: 80%;
-  margin-top: auto;
-  margin-bottom: auto;
+  width: 100%;
   background: #fff;
   flex-direction: column;
-  padding: 3%;
+  padding: 1em;
   border-radius: 5px;
+}
+
+#painel{
+  padding: 1em;
 }
 
 #tituloHome {
@@ -21,6 +23,18 @@
   text-decoration: none !important;
 }
 
-#urlEncurtada{
+#urlEncurtada {
   text-align: center;
+}
+
+#btnLogout {
+  position: fixed;
+  width: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  #btnLogout {
+    bottom: 1em;
+    left: calc(50% - 50px);
+  }
 }
