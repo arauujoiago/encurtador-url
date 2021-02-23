@@ -14,10 +14,10 @@
 ## Rodando
 
 - Abra o terminal
-- git clone https://github.com/arauujoiago/encurtador-url.git
-- cd encurtador-url
-- npm install
+- <code>git clone https://github.com/arauujoiago/encurtador-url.git</code>
+- <code>cd encurtador-url</code>
+- <code>npm install</code>
 - Edite o arquivo src/models/db.js com as informações de acesso ao banco de dados
 - Prepare o banco com o comando: <code>node src/models/initDb.js</code>
-- Rode o backRouter com o comando: node src/server.js
-- Rode o projeto com o comando: npm start
+- Rode o backRouter com o comando: <code>node src/server.js</code>
+- Rode o projeto com o comando: <code>npm start</code>
