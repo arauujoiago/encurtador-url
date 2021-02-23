@@ -18,6 +18,6 @@
 - cd encurtador-url
 - npm install
 - Edite o arquivo src/models/db.js com as informações de acesso ao banco de dados
-- Prepare o banco com o comando: node src/models/initDb.js
+- Prepare o banco com o comando: <code>node src/models/initDb.js</code>
 - Rode o backRouter com o comando: node src/server.js
 - Rode o projeto com o comando: npm start
