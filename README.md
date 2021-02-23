@@ -21,3 +21,10 @@
 - Prepare o banco com o comando: <code>node src/models/initDb.js</code>
 - Rode o backRouter com o comando: <code>node src/server.js</code>
 - Rode o projeto com o comando: <code>npm start</code>
+
+### Credenciais de Acesso
+
+- O sistema tem um usuário criado durante o processo de inicialização do banco de dados:
+
+Login: admin
+Senha: delta123

@@ -35,11 +35,6 @@ const urls = conn.define("urls", {
   }
 });
 
-// Fazer a sincronização das tabelas antes de iniciar o projeto, depois é preciso comentar o código abaixo:
-
-// urls.sync({ force: true });
-// usuarios.sync({ force: true });
-
 module.exports = {
   urls: urls,
   usuarios: usuarios
