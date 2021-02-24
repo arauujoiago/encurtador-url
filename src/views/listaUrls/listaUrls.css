@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-#painel{
+#painel {
   padding: 1em;
 }
 
@@ -17,13 +17,14 @@
 }
 
 #btnVoltar {
-  position: fixed;
+  position: absolute;
   width: 100px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   #btnVoltar {
     bottom: 1em;
     left: calc(50% - 50px);
+    position: fixed;
   }
 }

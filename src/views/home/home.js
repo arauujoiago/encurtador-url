@@ -50,16 +50,20 @@ function Home() {
                     <Form.Group>
                         <Form.Label htmlFor="inlineFormInputGroup" />
                         <InputGroup className="mb-2">
-                            <InputGroup.Prepend>
+                            <InputGroup.Prepend required>
                                 <InputGroup.Text>URL</InputGroup.Text>
                             </InputGroup.Prepend>
                             <FormControl id="urlOriginal" />
                         </InputGroup>
                     </Form.Group>
-                    <div id="urlEncurtada"><p>{urlCurta}</p></div>
-                    <Button variant="dark" type="submit" size="lg" onClick={handleSubmit} block>Encurtar</Button>
+                    <div id="urlEncurtada"><p>{urlCurta}</p>
+                        <Button variant="dark" id="btnEncurtar" type="submit" size="lg" onClick={handleSubmit} >Encurtar</Button>
+                    </div>
                 </Form>
-                <Link id="linkListar" to="/listaUrls"><Button id="btnListar" variant="info" size="lg" block>Listar URLs</Button></Link>
+
+                <div id="urlEncurtada">
+                    <Link id="linkListar" to="/listaUrls"><Button id="btnListar" variant="info" size="lg">Listar URLs</Button></Link>
+                </div>
             </div>
 
         </div>

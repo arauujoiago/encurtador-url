@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-#painel{
+#painel {
   padding: 1em;
 }
 
@@ -16,7 +16,12 @@
 }
 
 #btnListar {
-  margin-top: 0.5em;
+  margin-top: 0.1em;
+  width: 200px;
+}
+
+#btnEncurtar {
+  width: 200px;
 }
 
 #linkListar:hover {
@@ -28,13 +33,15 @@
 }
 
 #btnLogout {
-  position: fixed;
+  position: absolute;
   width: 100px;
+  right: 2em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   #btnLogout {
     bottom: 1em;
     left: calc(50% - 50px);
+    position: fixed;
   }
 }

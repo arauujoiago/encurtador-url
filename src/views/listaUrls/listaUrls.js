@@ -27,6 +27,13 @@ function ListaUrls() {
         return formatted
     }
 
+    function removeToken() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('idUser');
+        localStorage.removeItem('login');
+        window.location.reload();
+    }
+
     return (
         <div id="painel" className="d-flex justify-content-center">
             <div id="painelListaUrls">
