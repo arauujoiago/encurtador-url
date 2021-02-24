@@ -8,11 +8,10 @@ import Axios from 'axios'
 function ListaUrls() {
     const [urls, setUrl] = useState([]);
     var count = 1
-
     var idUser = localStorage.getItem('idUser');
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/listaUrl', { params: { idUser } }).then(response => {
+        Axios.get('http://localhost:5000/listaUrls', { params: { idUser } }).then(response => {
             setUrl(response.data);
         })
     }, []);
@@ -43,7 +42,7 @@ function ListaUrls() {
                         </tr>
                     </thead>
                     <tbody>
-                        {urls.map(urls => (<tr>
+                        {urls.map(urls => (<tr key={urls.id}>
                             <td>{count++}</td>
                             <td>{urls.urlOriginal}</td>
                             <td>{urls.urlCurta}</td>

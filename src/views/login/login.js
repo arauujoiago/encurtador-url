@@ -1,12 +1,10 @@
 import './login.css';
-import Users from './users.svg'
+import Users from '../../assets/users.svg'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react';
 import Axios from 'axios'
-import session from 'express-session';
-
 
 function Login({ setToken }) {
 
